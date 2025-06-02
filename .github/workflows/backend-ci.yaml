@@ -22,13 +22,10 @@ jobs:
           cache: gradle
 
       - name: Dar permisos a gradlew
-        working-directory: ./server
         run: chmod +x ./gradlew
 
       - name: Revisar dependencias 
-        working-directory: ./server
         run: ./gradlew dependencies
 
       - name: Compilar proyecto
-        working-directory: ./server
         run: ./gradlew build

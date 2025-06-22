@@ -1,10 +1,12 @@
-name: Spring Boot CI 
+name: CodeTest
 
 on:
   push:
-    branches: [main, staging, production]
+    branches:
+      - production
   pull_request:
-    branches: [main, staging, production]
+    branches:
+      - production
 
 jobs:
   build:
@@ -24,8 +26,10 @@ jobs:
       - name: Dar permisos a gradlew
         run: chmod +x ./gradlew
 
-      - name: Revisar dependencias 
+      - name: Revisar dependencias
         run: ./gradlew dependencies
 
       - name: Compilar proyecto
-        run: ./gradlew build
+        run: ./gradlew bootJar
+
+

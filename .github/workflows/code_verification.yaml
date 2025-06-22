@@ -1,12 +1,8 @@
 name: CodeTest
 
 on:
-  push:
-    branches:
-      - production
   pull_request:
-    branches:
-      - production
+    branches: ["main", "staging", "production"]
 
 jobs:
   build:

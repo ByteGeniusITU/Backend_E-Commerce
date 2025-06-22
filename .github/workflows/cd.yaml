@@ -60,10 +60,6 @@ jobs:
     if: ${{ contains(github.ref_name, 'production') }}
     needs: build_and_push
     steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-
       - name: Start Instance Refresh
         run: |
           aws autoscaling start-instance-refresh \

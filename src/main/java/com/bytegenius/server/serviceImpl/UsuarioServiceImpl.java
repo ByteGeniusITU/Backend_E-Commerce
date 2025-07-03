@@ -7,6 +7,7 @@ import com.bytegenius.server.repository.UsuarioRepository;
 import com.bytegenius.server.service.UsuarioService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -17,4 +18,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     public List<Usuario> getUsuarios() {
         return userRepo.findAll();
     }
+
+    @Override
+    public Optional<Usuario> getUsuarioById(long id) {
+        return userRepo.findById(id);
+    }
+
 }
